@@ -1,0 +1,10 @@
+lista = input().split()
+lista2 = input().split()
+cod = int(lista[0])
+units = int(lista[1])
+price = float(lista[2])
+cod1 = int(lista2[0])
+units1 = int(lista2[1])
+price1 = float(lista2[2])
+tot = units * price + units1 * price1
+print(f"VALOR A PAGAR: R$ {tot:.2f}")
