@@ -17,9 +17,9 @@ Obs.: don't forget the endline after all."""
 # print(f'X = {X}')
 
 
-def soma(A, B):
-    X = A + B
-    return X
+def soma(a: int, b: int) -> int:
+    x = a + b
+    return x
 
 
 assert soma(10, 9) == 19
