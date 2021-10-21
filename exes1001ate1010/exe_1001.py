@@ -22,6 +22,6 @@ def soma(a: int, b: int) -> int:
     return x
 
 
-assert soma(10, 9) == 19
-assert soma(-10, 4) == -6
-assert soma(15, -7) == 8
+# assert soma(10, 9) == 19
+# assert soma(-10, 4) == -6
+# assert soma(15, -7) == 8

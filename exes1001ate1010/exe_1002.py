@@ -20,6 +20,6 @@ def area(radio: float) -> float:
     return round(total, 4)
 
 
-assert area(2.00) == 12.5664
-assert area(100.64) == 31819.3103
-assert area(150.00) == 70685.7750
+# assert area(2.00) == 12.5664
+# assert area(100.64) == 31819.3103
+# assert area(150.00) == 70685.7750

@@ -7,16 +7,11 @@ This problem has no input.
 Output
 You must print the message Hello World! and then the endline as shown below.
 """
-
-print(f"Hello World!")
+# print(f"Hello World!")
 
 
 def speak() -> str:
     return print("Hello World!")
 
 
-assert speak() == "Hello World!"
-
-
-# string = "Hello World!"
-# assert string == 'Henrique','String wrong'
+# assert speak() == "Hello World!"
