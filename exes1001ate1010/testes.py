@@ -3,6 +3,7 @@ from exe_1000 import speak
 from exe_1001 import soma
 from exe_1002 import area
 from exe_1003 import product
+from exe_1004 import simple_product
 from exe_1006 import average2
 
 
@@ -29,3 +30,8 @@ class Testes(TestCase):
         self.assertEqual(average2(5.0, 6.0, 7.0), 6.3)
         self.assertEqual(average2(5.0, 10.0, 10.0), 9.0)
         self.assertEqual(average2(10.0, 10.0, 5.0), 7.5)
+
+    def test_simple_product(self):
+        self.assertEqual(simple_product(3, 9), 27)
+        self.assertEqual(simple_product(-30, 10), -300)
+        self.assertEqual(simple_product(0, 9), 0)
