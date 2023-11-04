@@ -5,7 +5,7 @@ A = float(V[0])
 B = float(V[1])
 C = float(V[2])
 
-d = (B ** 2) - (4 * A * C)
+d = (B**2) - (4 * A * C)
 if d < 0:
     print(f"Impossivel calcular")
 elif A == 0:

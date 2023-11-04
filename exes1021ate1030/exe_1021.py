@@ -1,52 +1,94 @@
-v = float(input())
-lista1 = (100, 50, 20, 10, 5, 2)
-print(f"NOTAS:")
-for n in lista1:
-    notas = int(v // n)
-    print(f"{notas} nota(s) de R$ {n:.2f}")
-    v -= notas * n
-print(f"MOEDAS:")
-lista2 = (1, 0.5, 0.25, 0.1, 0.05, 0.01)
-for x in lista2:
-    moedas = int(round(v, 2) // x)
-    print(f"{moedas} moeda(s) de R$ {x:.2f}")
-    v -= moedas * x
+def exe_1021_1():
+    """runtime:0.00000048 segundos segundos"""
+    v = input(float()) * 100
+    lista1 = (10000, 5000, 2000, 1000, 500, 200)
+    print("NOTAS:")
+    for n in lista1:
+        notas = v // n
+        print(f"{int(notas)} nota(s) de R$ {n / 100:.2f}")
+        v %= n
+
+    print("MOEDAS:")
+    lista2 = (100, 50, 25, 10, 5, 1)
+    for x in lista2:
+        moedas = v // x
+        print(f"{int(moedas)} moeda(s) de R$ {x / 100:.2f}")
+        v %= x
 
 
-# n100 = (v // 100)
-# r100 = v % 100
-# n50 = (r100 // 50)
-# r50 = r100 % 50
-# n20 = (r50 // 20)
-# r20 = r50 % 20
-# n10 = (r20 // 10)
-# r10 = r20 % 10
-# n5 = (r10 // 5)
-# r5 = r10 % 5
-# n2 = (r5 // 2)
-# r2 = r5 % 2
-# m1 = (r2 // 1)
-# rm1 = r2 % 1
-# m50 = (rm1 // 0.5)
-# mr50 = rm1 % 0.5
-# m25 = (mr50 // 0.25)
-# mr25 = mr50 % 0.25
-# m10 = (mr25 // 0.1)
-# mr10 = mr25 % 0.1
-# m5 = round(mr10 // 0.05, 2)
-# mr5 = mr10 % 0.05
-# m01 = round(mr5 // 0.01, 2)
-# print(f'NOTAS:')
-# print(f'{int(n100)} nota(s) de R$ 100.00')
-# print(f'{int(n50)} nota(s) de R$ 50.00')
-# print(f'{int(n20)} nota(s) de R$ 20.00')
-# print(f'{int(n10)} nota(s) de R$ 10.00')
-# print(f'{int(n5)} nota(s) de R$ 5.00')
-# print(f'{int(n2)} nota(s) de R$ 2.00')
-# print(f'MOEDAS:')
-# print(f'{int(round(m1, 2))} moeda(s) de R$ 1.00')
-# print(f'{int(round(m50, 2))} moeda(s) de R$ 0.50')
-# print(f'{int(round(m25, 2))} moeda(s) de R$ 0.25')
-# print(f'{int(round(m10, 2))} moeda(s) de R$ 0.10')
-# print(f'{int(round(m5, 2))} moeda(s) de R$ 0.05')
-# print(f'{int(round(m01, 2)) + 0.01} moeda(s) de R$ 0.01')
+def exe_1022_2(valor_total):
+    dicionario = {
+        "moeda100": 10000,
+        "moeda50": 5000,
+        "moeda20": 2000,
+        "moeda10": 1000,
+        "moeda5": 500,
+        "moeda2": 200,
+        "moeda1": 100,
+        "moeda050": 50,
+        "moeda025": 25,
+        "moeda010": 10,
+        "moeda005": 5,
+        "moeda001": 1,
+    }
+
+    def contar_moeda(valor_moeda, valor_total):
+        quantidade = 0
+        while valor_total >= valor_moeda:
+            quantidade += 1
+            valor_total -= valor_moeda
+        return quantidade
+
+    def contar(valor_total):
+        valor_total = int(valor_total * 100)
+        for moeda, valor_moeda in dicionario.items():
+            quantidade_moeda = contar_moeda(valor_moeda, valor_total)
+            valor_total -= quantidade_moeda * valor_moeda
+            if valor_moeda > 100:
+                if valor_moeda == 10000:
+                    print("NOTAS:")
+                print(f"{quantidade_moeda} nota(s) de R$ {valor_moeda / 100:.2f}")
+                continue
+            if valor_moeda == 100:
+                print("MOEDAS:")
+            print(f"{quantidade_moeda} moeda(s) de R$ {valor_moeda / 100:.2f}")
+
+    contar(valor_total)
+
+
+def exe_1022_3(valor_total):
+    dicionario = {
+        "moeda100": 10000,
+        "moeda50": 5000,
+        "moeda20": 2000,
+        "moeda10": 1000,
+        "moeda5": 500,
+        "moeda2": 200,
+        "moeda1": 100,
+        "moeda050": 50,
+        "moeda025": 25,
+        "moeda010": 10,
+        "moeda005": 5,
+        "moeda001": 1,
+    }
+
+    def contar_moeda(valor_moeda, valor_total):
+        quantidade = valor_total // valor_moeda
+        return quantidade
+
+    def contar(valor_total):
+        valor_total = int(valor_total * 100)
+        for moeda, valor_moeda in dicionario.items():
+            quantidade_moeda = contar_moeda(valor_moeda, valor_total)
+            valor_total -= quantidade_moeda * valor_moeda
+            if valor_moeda > 100:
+                if valor_moeda == 10000:
+                    print("NOTAS:")
+                print(f"{quantidade_moeda} nota(s) de R$ {valor_moeda / 100:.2f}")
+                continue
+            if valor_moeda == 100:
+                print("MOEDAS:")
+            print(f"{quantidade_moeda} moeda(s) de R$ {valor_moeda / 100:.2f}")
+
+    contar(valor_total)
+    inserir_valor = float(input())

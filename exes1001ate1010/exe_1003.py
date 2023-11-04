@@ -19,7 +19,7 @@ def product(a: int, b: int) -> int:
     return total
 
 
-#
+
 # assert product(3, 9) == 27
 # assert product(-30, 10) == -300
 # assert product(0, 9) == 0

@@ -16,7 +16,7 @@ don't forget to print the end of line after the result, otherwise you will recei
 
 def area(radio: float) -> float:
     pi = 3.14159
-    total = pi * (radio ** 2)
+    total = pi * (radio**2)
     return round(total, 4)
 
 
